@@ -1,11 +1,10 @@
 "use client";
 
-import { useForm, UseFormRegisterReturn } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { referralSchema, ReferralInput } from "@/schemas/referral";
 import { trpc } from "@/lib/trpc";
-import { useRouter } from "next/navigation";
+import { ReferralInput, referralSchema } from "@/schemas/referral";
+import { zodResolver } from "@hookform/resolvers/zod";
 import Link from "next/link";
+import { useForm, UseFormRegisterReturn } from "react-hook-form";
 
 export default function ReferralForm() {
   const mutation = trpc.referral.submitReferral.useMutation();
@@ -17,8 +16,6 @@ export default function ReferralForm() {
   } = useForm<ReferralInput>({
     resolver: zodResolver(referralSchema),
   });
-
-  const router = useRouter();
 
   const onSubmit = (data: ReferralInput) => {
     mutation.mutate(data);
