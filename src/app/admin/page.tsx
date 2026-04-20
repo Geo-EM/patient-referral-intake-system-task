@@ -33,7 +33,7 @@ export default function AdminPage() {
 
   if (isLoading) {
     return (
-      <div className="p-8 animate-spin rounded-full border-8 mx-auto border-gray-300 border-t-gray-600 mt-28" />
+      <div className="p-8 size-20 animate-spin rounded-full border-8 mx-auto border-gray-300 border-t-gray-600 mt-28" />
     );
   }
 
@@ -97,7 +97,7 @@ export default function AdminPage() {
             </tr>
           </thead>
 
-          <tbody>
+          <tbody className="text-nowrap">
             {filteredData.length ? (
               filteredData.map((r) => (
                 <tr key={r.id} className="border-t hover:bg-gray-50 transition">

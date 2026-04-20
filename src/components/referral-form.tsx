@@ -46,7 +46,7 @@ export default function ReferralForm() {
             {mutation.isSuccess && (
               <div className="bg-green-50 text-green-700 p-3 rounded-lg text-sm">
                 <p className="text-base mb-1 font-medium">
-                  Our team will contact the patient within 24 hours
+                  {mutation.data.followUp}
                 </p>
                 <p>
                   {mutation.data.message} — ID: {mutation.data.id}
@@ -180,7 +180,7 @@ export default function ReferralForm() {
           {mutation.isSuccess && (
             <div className="bg-green-50 text-green-700 p-3 rounded-lg text-sm">
               <p className="text-base mb-1 font-medium">
-                Our team will contact the patient within 24 hours
+                {mutation.data.followUp}
               </p>
               <p>
                 {mutation.data.message} — ID: {mutation.data.id}
